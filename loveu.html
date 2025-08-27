@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Shirley Jasmine</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #ffe4e1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+        .container {
+            display: flex;
+            gap: 30px;
+        }
+        .card {
+            width: 180px;
+            height: 220px;
+            background: #fff;
+            border-radius: 16px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            font-size: 1.2em;
+            transition: transform 0.2s;
+            position: relative;
+            text-align: center;
+        }
+        .card:hover {
+            transform: scale(1.05);
+            background: #ffe0f0;
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0; left: 0;
+            width: 100vw; height: 100vh;
+            background: rgba(0,0,0,0.4);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+        .modal-content {
+            background: #fff;
+            padding: 32px 24px;
+            border-radius: 18px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.25);
+            max-width: 350px;
+            width: 90vw;
+            text-align: center;
+            position: relative;
+            animation: open 0.3s;
+            max-height: 80vh;
+            overflow-y: auto;
+        }
+        @keyframes open {
+            from { transform: scale(0.7); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+        .close-btn {
+            position: absolute;
+            top: 12px;
+            right: 16px;
+            background: #ffb6c1;
+            border: none;
+            border-radius: 50%;
+            width: 28px; height: 28px;
+            font-size: 1.2em;
+            cursor: pointer;
+        }
+        @media (max-width: 600px) {
+            body {
+                align-items: flex-start;
+                padding-top: 30px;
+            }
+            .container {
+                flex-direction: column;
+                gap: 20px;
+                align-items: center;
+                width: 100vw;
+            }
+            .card {
+                width: 90vw;
+                max-width: 350px;
+                height: 140px;
+                font-size: 1em;
+            }
+            .modal-content {
+                max-width: 95vw;
+                padding: 24px 10px;
+            }
+        }
+        .modal-content, .card, h2, p, .modal-content div {
+            text-align: center;
+        }
+        .left {
+            text-align: left !important;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="card" onclick="openModal(0)">Dia 1</div>
+        <div class="card" onclick="openModal(1)">" TE AMO "</div>
+        <div class="card" onclick="openModal(2)">365 razones <br> para amarte</div>
+        <div class="card" onclick="openModal(3)">💌</div>
+    </div>
+
+    <div class="modal" id="modal0">
+        <div class="modal-content">
+            <button class="close-btn" onclick="closeModal(0)">&times;</button>
+            <h2>Gracias por todo, te amo.</h2>
+            <p>DATO RANDOM: Aún recuerdo la primera vez que supe de ti; tú ni siquiera sabías que yo existía, jaja.<br>
+                ¿Te gustaría recordar conmigo?<br>
+                Todo comenzó con una llamada mientras jugábamos videojuegos junto a tu hermana y otra personita que nunca llegué a conocer. Recuerdo esa mezcla de frialdad e inseguridad que transmitías en esa primera impresión. Gracias a esa llamada terminamos intercambiando nuestros Instagram.<br>
+                Después de eso seguimos con nuestras vidas como si nada, aunque en el fondo yo quería hablarte para conocerte mejor, pero tenía miedo de que me ignoraras. Por eso te agradezco mucho que hayas sido tú quien envió el primer mensaje.<br>
+                Con el paso de los mensajes fui perdiendo el miedo a que me ignoraras. Desde entonces traté de pasar más tiempo contigo: invitándote a llamadas, jugando y enviándote mensajes constantes 💌.<br>
+            </p>
+        </div>
+    </div>
+    <div class="modal" id="modal1">
+        <div class="modal-content">
+            <button class="close-btn" onclick="closeModal(1)">&times;</button>
+            <h2>Tu sonrisa ilumina mi mundo. ¡Nunca lo olvides! ❤️</h2>
+            <p>A veces pienso que hoy en día el “te amo” se dice tan comúnmente que parece perder su sentido.
+                Como si fuera una frase de rutina y no un sentimiento real. Es extraño, porque para mí el amor no es algo que se dice a la ligera, es algo que se siente y se demuestra.
+                Decir “te amo” debería ser especial, algo que nace de verdad del corazón, no solo una costumbre.</p>
+            <p>Sin duda tuve miedo de decirte "te amo" por primera vez, pero sabes que expreso lo que siento y cómo no amar a quien me inspira a ser mejor persona.
+                <img src="loveu1.jpeg" alt="primerteamo" style="width: 100%; height: auto;"></p>
+            <p>Contigo aprendí a expresarme mejor, a ser un poco más abierto y más humano. Cuando nos conocimos por primera vez, desconfiabas de mí; ahora espero que no desconfíes de mis palabras.<br>
+                Antes te dije que siempre estaré para ti. Si en algún momento me necesitas, no dudes en contactarme, haré todo lo posible por ti.
+                <img src="loveu2.jpeg" alt="segundoteamo" style="width: 100%; height: auto;"></p>
+            <p>Sí, te amo, pero no como un amor de la actualidad, sino como un amor que nace del alma, un amor mexicano de antes.<br>
+                Porque en México, cuando amamos, lo hacemos hasta después de la muerte.
+                <img src="loveu3.jpeg" alt="tercerteamo" style="width: 100%; height: auto;"></p>
+        </div>
+    </div>
+    <div class="modal" id="modal2">
+        <div class="modal-content">
+            <button class="close-btn" onclick="closeModal(2)">&times;</button>
+            <h2>Una razón por<br>cada dia del año</h2>
+            <div class="card" onclick="openModal(101)">Enero</div>
+                <div class="modal" id="modal101">
+                    <div class="modal-content">
+                        <button class="close-btn" onclick="closeModal(101)">&times;</button>
+                        <h2>Enero</h2>
+                        <p class="left">1.- Tus ojos<br>
+                            2.- Tu sonrisa<br>
+                            3.- Tu risa<br>
+                            4.- Tu forma de ser<br>
+                            5.- Tu inteligencia<br>
+                            6.- Tu sentido del humor<br>
+                            7.- Tu creatividad<br>
+                            8.- Tu pasión por lo que amas<br>
+                            9.- Tu bondad<br>
+                            10.- Tu paciencia<br>
+                            11.- Tu apoyo incondicional<br>
+                            12.- Tu capacidad para escuchar<br>
+                            13.- Tu honestidad<br>
+                            14.- Tu capacidad para adaptarte a los cambios<br>
+                            15.- Tu generosidad<br>
+                            16.- Tu empatía<br>
+                            17.- Tu perseverancia<br>
+                            18.- Tu optimismo<br>
+                            19.- Tu humildad<br>
+                            20.- Tu lealtad<br>
+                            21.- Tu ternura<br>
+                            22.- Tu pasión por aprender<br>
+                            23.- Tu gusto por los videojuegos<br>
+                            24.- Tu dedicación<br>
+                            25.- Tu capacidad para hacerme reír<br>
+                            26.- Tu amor por la vida<br>
+                            27.- Tu sinceridad<br>
+                            28.- Tu entusiasmo<br>
+                            29.- Tu forma de ver el mundo<br>
+                            30.- Tu sensibilidad<br>
+                            31.- Tu amor por los animales<br>
+                        </p>
+                    </div>
+                </div>
+            <div class="card" onclick="openModal(102)">Febrero</div>
+            <div class="modal" id="modal102">
+                <div class="modal-content">
+                    <button class="close-btn" onclick="closeModal(102)">&times;</button>
+                        <h2>Febrero</h2>
+                        <p class="left">1.- Tu amor por Dios<br>
+                            2.- Tu voz<br>
+                            3.- Tu amor por la música<br>
+                            3.- La motivacion constante que me transmites<br>
+                            4.- Cómo me inspiras<br>
+                            5.- Tu amor por la naturaleza<br>
+                            6.- Tu habilidad para resolver problemas<br>
+                            7.- La energía que transmites<br>
+                            8.- Te gusta el sushi <br>
+                            9.- Tu capacidad para inspirar a otros<br>
+                            10.- Tu amor por el té<br>
+                            11.- Tu Tranquilidad<br>
+                            12.- Tu habilidad para la cocinar<br>
+                            13.- Tu mirada cuando te brillan los ojos<br>
+                            14.- Haria todo lo posible para que ames este dia y seas la envidia de todos<br>
+                            15.- Tu amor por los paisajes<br>
+                            16.- Tu sentido de la responsabilidad<br>
+                            17.- Tu capacidad para motivarme<br>
+                            18.- Tu manera de quererme<br>
+                            19.- Tu habilidad para comprender<br>
+                            20.- Tu sencillez<br>
+                            21.- Tu manera diferente de ser<br>
+                            22.- La confianza que me inspiras<br>
+                            23.- Me haces sentir protegido<br>
+                            24.- La felicidad que me inspiras<br>
+                            25.- Me siento cómodo contigo<br>
+                            26.- Me haces sentir querido<br>
+                            27.- Tu manera de emocinarte<br>
+                            28.- Tus gustos excentricos<br>
+                        </p>
+                </div>
+            </div>
+            <div class="card" onclick="openModal(103)">Marzo</div>
+            <div class="modal" id="modal103">
+                <div class="modal-content">
+                    <button class="close-btn" onclick="closeModal(103)">&times;</button>
+                        <h2>Marzo</h2>
+                        <p class="left">1.- Tu forma de expresarte<br>
+                            2.- Tu bondad<br>
+                            3.- Tu capacidad para hacerme sentirme mejor<br>
+                            4.- Aceptarias mi afecto fisico aunque no es lo tuyo<br>
+                            5.- Horas de llamadas sin aburrirnos<br>
+                            6.- Tu amor por el color negro<br>
+                            7.- Tu capacidad para hacerme sentir seguro<br>
+                            8.- Tu amor por la fotografía<br>
+                            9.- Tu habilidad para hacerme reír incluso en los momentos difíciles<br>
+                            10.- Tu amor por la comida<br>
+                            11.- Tu capacidad para hacerme sentir comprendido<br>
+                            12.- Simplemente te amo<br>
+                            13.- Tu habilidad para hacerme sentir valorado<br>
+                            14.- Cómo te abres emocionalmente conmigo<br>
+                            15.- Tu capacidad para hacerme sentir feliz<br>
+                            16.- Tu amor por lo romantico<br>
+                            17.- Tu habilidad en los videojuegos<br>
+                            18.- Tuvimos un mundo en Minecraft<br>
+                            19.- Estas conmigo cuando nadie más lo hace<br>
+                            20.- Cómo coinsidimos en muchas cosas<br>
+                            21.- Me haces valorar más la vida<br>
+                            22.- Tu apoyo incluso teniendo tus propios problemas<br>
+                            23.- Amas los mangos<br>
+                            24.- Tu amor por la vida misma<br>
+                            25.- Me encanta cómo me haces sentir cuando compartimos tiempo<br>
+                            26.- Me encantan tus ojitos todos hermosos.<br>
+                            27.- Me gusta cuando me das afecto.<br>
+                            28.- Adoro tu personalidad.<br>
+                            29.- Me haces sentir bien cuando me escuchas.<br>
+                            30.- Me encanta cómo me entiendes.<br>
+                            31.- Me gusta que siempre estás ahí para mí.
+                        </p>
+                </div>
+            </div>
+            <div class="card" onclick="openModal(104)">Abril</div>
+            <div class="modal" id="modal104">
+                <div class="modal-content">
+                    <button class="close-btn" onclick="closeModal(104)">&times;</button>
+                        <h2>Abril</h2>
+                        <p class="left">1.- Llenaste mi mundo de felicidad<br>
+                            2.- Me ayudas en mis recaidas<br>
+                            3.- Me sacaste de esa ansiedad que odiaba<br>
+                            4.- Eres parte de mi vida un complemento<br>
+                            5.- AMO tu hermosa mirada<br>
+                            6.- Eliminaste ese vacio que sentia<br>
+                            7.- El ineteres que demostraste en mi bienestar<br>
+                            8.- Me impulsaste a ser mejor persona<br>
+                            9.- Cuando estoy contigo los problemas de mi mente se despejan<br>
+                            10.- Elevas mis animos<br>
+                            11.- Amo pasar tiempo comtigo<br>
+                            12.- Antes mis ojos eres perfecta<br>
+                            13.- Tu habilidad para hacerme sentir comprendido incluso cuando no estoy seguro de lo que siento<br>
+                            14.- Me ayudas alejarme de los malos habitos <br>
+                            15.- Haces sentirme seguro incluso cuando me siento vulnerable<br>
+                            16.- Tu amor por las flores<br>
+                            17.- Tu habilidad para hacerme sentir realmente querido incluso estando lejos de ti<br>
+                            18.- Lo tierna que eres<br>
+                            19.- Tu capacidad para hacerme sentir feliz simplemente con tu presencia<br>
+                            20.- Tu amor por la vida y todo lo que ofrece.<br>
+                            21.- Me despejas de todos mis problemas de mi mente<br>
+                            22.- Quiero ver tu sonrisa todas las mañanas<br>
+                            23.- Cuando estoy contigo me siento en paz<br>
+                            24.- Calmaste las voces de mi cabeza<br>
+                            25.- Por ti sonrio <br>
+                            26.- Me gustaria quitarte todas tus inquietudes<br>
+                            27.- Me gustaria hacerte feliz todos los dias de tu vida<br>
+                            28.- Me gustaria que nunca te sientas sola<br>
+                            29.- Muchos dias cada que despierto lo primero que hago es pensar en ti<br>
+                            30.- Me gustaria que nunca te sientas triste<br>
+                        </p>
+                </div>
+            </div>
+            <div class="card" onclick="openModal(105)">Mayo</div>
+            <div class="modal" id="modal105">
+                <div class="modal-content">
+                    <button class="close-btn" onclick="closeModal(105)">&times;</button>
+                        <h2>Mayo</h2>
+                        <p class="left">1.- Eres mi persona favorita<br>
+                            2.- Contigo soy 0 problemas<br>
+                            3.- Tu voz me calma <br>
+                            4.- Contigo siento que no pasa el tiempo<br>
+                            5.- estando contigo me siento mucho mejor<br>
+                            6.- De verdad amo tus ojitos de perla<br>
+                            7.- Me enseñas a valorar la vida<br>
+                            8.- Simplemente te amo<br>
+                            9.- Siento que no hacen falta motivos, solo quiero amarte<br>
+                            10.- Amo el té de Jazmin y tu te llamas Jasmine<br>
+                            11.- A veces sueño que pasamos tiempo juntos<br>
+                            12.- Me haces sacar mi lado lindo y romantico<br>
+                            13.- Cuando ya no podia más tu fuiste la unica persona que estuvo ahi para mi<br>
+                            14.- Tuviste confianza en mi<br>
+                            15.- Nunca me haz hecho daño en el tiempo que nos conocemos<br>
+                            16.- No dejo de pensarte<br>
+                            17.- Me dijiste que me querias<br>
+                            18.- Me demostraste amor a pesar de que casi no lo haces<br>
+                            19.- Te agrado la idea de mudarnos a un ranchito lejos de todo mundo<br>
+                            20.- Te quedaste sin necesidad de yo pedirlo<br>
+                            21.- Me buscaste solo para pasar tiempo conmigo<br>
+                            22.- No me juzgas.<br>
+                            23.- Me aceptas tal como soy.<br>
+                            24.- No me juzgaste por mi pasado<br>
+                            25.- Me aceptaste en tu vida<br>
+                            26.- Amo verte sonriente<br>
+                            27.- Me ayudas a cumplir mis metas<br>
+                            28.- Te amo<br>
+                            29.- Dormias en llamada conmigo para no sentirme solo<br>
+                            30.- Gracias a ti ya no soy el mismo<br>
+                            31.- Cuando estoy contigo pierdo la nocion del tiempo<br>
+                        </p>
+                </div>
+            </div>
+            <div class="card" onclick="openModal(106)">Junio</div>
+            <div class="modal" id="modal106">
+                <div class="modal-content">
+                    <button class="close-btn" onclick="closeModal(106)">&times;</button>
+                        <h2>Junio</h2>
+                        <p class="left">1.- para que nunca te sientas insegura<br>
+                            2.- En parte vivo gracias a ti<br>
+                            3.- Cada cosa romantica me hace recordar a ti<br>
+                            4.- He intentado mejorar mi bienestar gracias a ti<br>
+                            5.- Amo, en verdad amo tu forma de ser<br>
+                            6.- Amaria besar tus mejillas<br>
+                            7.- Te mereces el mundo entero<br>
+                            8.- Pienso que siempre me abrazas<br>
+                            9.- Me demuestras que estas para mi<br>
+                            10.- Amaria ver animes junto a ti<br>
+                            11.- Daria mi vida por ti<br>
+                            12.- Estaria hasta el fin de la existencia contigo<br>
+                            13.- Eres la luna de mi mundo<br>
+                            14.- Por ti iria hasta el inframundo<br>
+                            15.- Amo darte amor<br>
+                            16.- Nunca heriste mis sentimientos<br>
+                            17.- Solo contigo he llegado hasta este nivel con los detalles<br>
+                            18.- Mis madrugadas ahora son menos tristes gracias a ti<br>
+                            19.- Me enamora tu inteligencia<br>
+                            20.- Para mis ojos eres como una obra de arte<br>
+                            21.- Por ti haria lo que sea<br>
+                            22.- He llegado al punto de solo querer estar contigo a pesar que amo la soledad<br>
+                            23.- Aceotaste compartir tu espacio personal junto a mi<br>
+                            24.- Tienes mi confianza absoluta<br>
+                            25.- Quiero protegerte hasta el fin<br>
+                            26.- Confiaria mi vida en ti<br>
+                            27.- Podria descansar junto a ti sin ninguna preocupación<br>
+                            28.- Conoces la mejor versión de mi<br>
+                            29.- Te cuidaria siempre aunque sea a costa de mi vida<br>
+                            30.- Se que nunca me haras daño
+                        </p>
+                </div>
+            </div>
+            <div class="card" onclick="openModal(107)">Julio</div>
+            <div class="modal" id="modal107">
+                <div class="modal-content">
+                    <button class="close-btn" onclick="closeModal(107)">&times;</button>
+                        <h2>Julio</h2>
+                        <p class="left">1.- Siempre tienes palabras de apoyo<br>
+                            2.- Tu mirada transmite paz<br>
+                            3.- Me haces querer esforzarme más<br>
+                            4.- Eres mi mejor compañía<br>
+                            5.- Me haces querer ser alguien que te cuide<br>
+                            6.- Se que siempre me apoyaras<br>
+                            7.- Estoy muy seguro que nunca me dejaras solo<br>
+                            8.- En tus ojitos se encuentra mi alivio<br>
+                            9.- Me enseñas amarme<br>
+                            10.- Haces que sienta que puedo hacer todo cuando estoy junto a ti<br>
+                            11.- Me haces muy feliz<br>
+                            12.- Amo pasar cada segundo junto a ti<br>
+                            13.- Tus palabras siempre me alientan<br>
+                            14.- Tengo un temor de perderte<br>
+                            15.- Llenas mi mundo de felicidad<br>
+                            16.- No hay nadie como tu<br>
+                            17.- Nadie se compara a ti <br>
+                            18.- Cambiaste mi vida<br>
+                            19.- Estando contigo me sineto mucho mejor<br>
+                            20.- Por ti cruzaria por medio de una tormenta<br>
+                            21.- Me apoyaste desde siempre<br>
+                            22.- No tienes miedo de expresarte<br>
+                            23.- Por ti me esfuerzo cada dia<br>
+                            24.- Quiero hacerte tan feliz como tu me haces sentir<br>
+                            25.- Aunque casi no hablemos nunca me abandonas<br>
+                            26.- Amo tu nombre de princesa<br>
+                            27.- Amaria estar junto a ti<br>
+                            28.- Eres completamente sincera conmigo<br>
+                            29.- Sigues conmigo apesar de saber como soy<br>
+                            30.- Eres mi felicidad <br>
+                            31.- De verdad amo tu personalidad
+                        </p>
+                </div>
+            </div>
+            <div class="card" onclick="openModal(108)">Agosto</div>
+            <div class="modal" id="modal108">
+                <div class="modal-content">
+                    <button class="close-btn" onclick="closeModal(108)">&times;</button>
+                        <h2>Agosto</h2>
+                        <p class="left">1.- Más pasa el tiempo y más te quiero<br>
+                            2.- Me transmites una enorme confianza<br>
+                            3.- Se que me seguirias queriendo si algun dia lo pierdo todo<br>
+                            4.- Cambiaste mi forma de ver la vida<br>
+                            5.- Cambiaste mi caracter<br>
+                            6.- Por ti lo dejaria todo<br>
+                            7.- Se que me cuidarias si algun dia enfermo<br>
+                            8.- Nunca me tuviste miedo o desconfianza por mi pasado<br>
+                            9.- Aunque dices que no yo se que me dejarias comer de tu mango<br>
+                            10.- Amas el mango tanto como yo a ti<br>
+                            11.- Te preocupas por mi vienestar<br>
+                            12.- Gracias a ti trato de ser mejor cada mañana<br>
+                            13.- Nunca me dejaste abajo<br>
+                            14.- Nunca me diste la espalda<br>
+                            15.- Compartiste tus gustos conmigo<br>
+                            16.- Siempre me respetaste<br>
+                            17.- Nunca criticaste mi manera de ser<br>
+                            18.- Tu apoyo incondicional me hizo amarte más<br>
+                            19.- En ciertas cosas eres mi contraparte pero a la vez coincidimos en demasiadas cosas<br>
+                            20.- ¿Ya dije que amo tus ojos tan hermosos?<br>
+                            21.- Amo tus labios bonitos<br>
+                            22.- Me ayudaste a plantearme nuevos sueños y metas<br>
+                            23.- Estuviste todo este tiempo a mi lado<br>
+                            24.- Eres muy valiente<br>
+                            25.- Nunca te rindes<br>
+                            26.- Por ti cambie casi completamente el rumbo de mi vida<br>
+                            27.- FELIZ CUMPLEAÑOS CORAZÓN DE MELÓN<br>
+                            28.- Te amo con mi alma, eso incluye tambien amarte despues de mi muerte<br>
+                            29.- Me quieres tal como soy<br>
+                            30.- Me levantas mis animos<br>
+                            31.- Tus "Te quiero" abrazan mi alma
+                        </p>
+                </div>
+            </div>
+            <div class="card" onclick="openModal(109)">Septiembre</div>
+            <div class="modal" id="modal109">
+                <div class="modal-content">
+                    <button class="close-btn" onclick="closeModal(109)">&times;</button>
+                        <h2>Septiembre</h2>
+                        <p class="left">1.- Aunque este destrozado siempre me levanto gracias a ti<br>
+                            2.- Ahora el unico respeto que me importa es el tuyo<br>
+                            3.- Me hiciste recordar el valor de la vida<br>
+                            4.- Valoro el tiempo que pasamos juntos<br>
+                            5.- Me hiciste sentirme querido de verdad<br>
+                            6.- Tu me elegiste para pasar parte de tu tiempo<br>
+                            7.- Las acciones valen más que las palabras pero en verdad amo tus ojos<br>
+                            8.- Desarrolle un cariño incondicional por ti<br>
+                            9.- Siempre respetaste nuestras diferencias<br>
+                            10.- Se que compartiriamos del mismo taco<br>
+                            11.- Nunca me hiciste dudar de nada<br>
+                            12.- Solo con recordarte me haces feliz<br>
+                            13.- Estoy seguro que estarias conmigo hasta el dia de mi fin<br>
+                            14.- Estoy más seguro de que me esperarias para comer e incluso me invitarias de tu comida<br>
+                            15.- Tal vez no lo sabes pero a partir de cierto dia fuiste mi lugar seguro<br>
+                            16.- No me tuviste miedo ni me trataste mal a pesar que venia del infierno<br>
+                            17.- Cuando sijiste "se que tu no eres malo" ese dia te entregue mi vida entera<br>
+                            18.- Siempre senti que te preocupabas por mi<br>
+                            19.- Te daria el mundo entero por como me has tratado<br>
+                            20.- Hay noches en las que te pienso en silencio<br>
+                            21.- Me respetasate a pesar de mi cultura y diferencias<br>
+                            22.- Contigo puedo bajar la guardia<br>
+                            23.- Solo te amo, si?<br>
+                            24.- En verdad te preocupaste por mi <br>
+                            25.- Aceptaste darme los $.50c de tu paga, es un gesto tan hermoso<br>
+                            26.- Llegaste a mi vida como un angel mandado por dios<br>
+                            27.- Por respeto a ti deje el alcohol<br>
+                            28.- Te respeto más que a nadie<br>
+                            29.- En tus ojos veo alguien que desea ser amada profundamente<br>
+                            30.- Eres muy especial para mi<br>
+                        </p>
+                </div>
+            </div>
+            <div class="card" onclick="openModal(110)">Octubre</div>
+            <div class="modal" id="modal110">
+                <div class="modal-content">
+                    <button class="close-btn" onclick="closeModal(110)">&times;</button>
+                        <h2>Octubre</h2>
+                        <p class="left">1.- Se que siempre estas para mi<br>
+                            2.- Me apoyas a pesar que tienes tus propios problemas<br>
+                            3.- Si meto las manos al fuego por ti, se que estarias ahi para ayudarme a sanar<br>
+                            4.- Trato siempre darte lo mejor de mi<br>
+                            5.- Me haces feliz por eso daria todo de mi para verte feliz<br>
+                            6.- Solo a ti te entregaria toda mi confianza a pesar que hace años deje de confiar en las personas<br>
+                            7.- Te entrego mi corazón y con ello todo mi amor, cuidalo por favor<br>
+                            8.- Contigo lo malandro se me quita jjjj<br>
+                            9.- Pienso en ti y todo es mucho mejor<br>
+                            10.- Recuerdo tus palabras de aliento<br>
+                            11.- Eres mi calma en la vida<br>
+                            12.- Eres mi luz de guia<br>
+                            13.- Eres mi motivo en mi razón<br>
+                            14.- Contigo el mundo es mucho mejor<br>
+                            15.- Mis problemas disminuyen contigo<br>
+                            16.- Mi futuro no lo quiero si no estas conmigo en un ranchito comiendo mangos<br>
+                            17.- Gracias a ti deje mi pasado y gran parte de mi dolor<br>
+                            18.- Eres mi refugio y mi perdón<br>
+                            19.- Cuando dices que me quieres yo te sigo sin temor<br>
+                            20.- No soy de bailar pero por ti lo haria hasta que tú no puedas más<br>
+                            21.- La luna me recuerda el hermoso brillo de tus ojos<br>
+                            22.- Te esperaria mil y un noches<br>
+                            23.- Se que me quieres<br>
+                            24.- Me diste otras formas de ver la vida, por eso yo daria mi vida por ti<br>
+                            25.- Cambiaste mi mundo gris por uno azul<br>
+                            26.- Estoy seguro que nunca me traicionarias<br>
+                            27.- Eres la paz en mi vida llena de guerra<br>
+                            28.- Me aceptas y eso es muy valioso para mi<br>
+                            29.- Amas el pozole, como no amar a alguien que ama el pozole hahaha<br>
+                            30.- Imitaste la frase que más amo "Soy ese"<br>
+                            31.- Solo por ti sere mejor que ayer
+                        </p>
+                </div>
+            </div>
+            <div class="card" onclick="openModal(111)">Noviembre</div>
+            <div class="modal" id="modal111">
+                <div class="modal-content">
+                    <button class="close-btn" onclick="closeModal(111)">&times;</button>
+                        <h2>Noviembre</h2>
+                        <p class="left">1.- Nunca me rechazarias una muestra de aprecio<br>
+                            2.- Amas la tranquilidad al igual que yo<br>
+                            3.- Contigo siento que tengo todo<br>
+                            4.- Contigo pase de ser antipatico y frio a alguien que se preocupa por el bienestar<br>
+                            5.- Aceptarias hacer carne asada junto a mi (mi sueño)<br>
+                            6.- Amas las plantas, juntos tendriamos un jardin hermoso<br>
+                            7.- Contigo me senti perdonado<br>
+                            8.- Fuiste mi unica compañia por un tiempo<br>
+                            9.- Contigo puedo expresar mis sentimientos<br>
+                            10.- Un abrazo tuyo bastaria para hacerme sentir mejor<br>
+                            11.- Eres super linda<br>
+                            12.- Dejaste tu huella en mi vida<br>
+                            13.- Posiblemente me dejarias dormir en tus brazos y eso no tiene precio, lo amaria demasiado<br>
+                            14.- Apreciarias mis detalles auneque sean pequeños<br>
+                            15.- En cierto modo amo que seas sentimental, se me hace super tierno <br>
+                            16.- Cuando estoy conigo me siento como en el cielo<br>
+                            17.- Me relajas solo con estar conmigo<br>
+                            18.- Me haces ser cursi<br>
+                            19.- Me devuelves el brillo cuando me deprimo<br>
+                            20.- Eres lo que le hacia falta a mi vida, alguien en quien confiar<br>
+                            21.- Mi querer no es pasajero, llevo mucho tiempo queriendote intensamente<br>
+                            22.- Por ti todo soy capaz<br>
+                            23.- Un dia te dije "Te amo" y ya no me calme<br>
+                            24.- Mejoraste mi actitud<br>
+                            25.- Me alegro con cada mensaje tuyo<br>
+                            26.- Pasaron meses y aun sigo perdido en tus ojos bonitos<br>
+                            27.- Me encariñe demasiado contigo<br>
+                            28.- Te agradezco todo el tiempo que estuviste conmigo<br>
+                            29.- Construiria un reinado solo para ti<br>
+                            30.- Eres tan linda en todos los aspectos<br>
+                        </p>
+                </div>
+            </div>
+            <div class="card" onclick="openModal(112)">Diciembre</div>
+            <div class="modal" id="modal112">
+                <div class="modal-content">
+                    <button class="close-btn" onclick="closeModal(112)">&times;</button>
+                        <h2>Diciembre</h2>
+                        <p class="left">1.- Solo a ti te he escrito cartas (aunque no sean fisicas)<br>
+                            2.- En mis ojos eres como una obra de arte<br>
+                            3.- Tu sonrisa me deja segago<br>
+                            4.- Me contaste parte de tu historia<br>
+                            5.- Confiaste en mi a tal punto que formamos una linda amistad<br>
+                            6.- Me ayudaste a tomar desiciones importantes en mi vida<br>
+                            7.- Relajaste mi mente que era un desastre<br>
+                            8.- Evitaste que volviera a esos dias malos<br>
+                            9.- Cambiaste mi presente<br>
+                            10.- Perdi mi fe en todo pero me devolviste parte de ella<br>
+                            11.- Cambiaste mis pensamientos ya que la mayoria de ellos eran malos<br>
+                            12.- Compartimos momentos muy divertidos<br>
+                            13.- Pienso en ti en todas partes<br>
+                            14.- Me enseñas cosas nuevas<br>
+                            15.- Compartes todos tus gustos conmigo<br>
+                            16.- Quiero abrazarte y nunca soltarte<br>
+                            17.- Fuiste mi amor despues de la guerra<br>
+                            18.- Solo tengo ojos para ti<br>
+                            19.- Sentia mi vida perdida pero apareciste tú y con ello intente llevarla mejor<br>
+                            20.- Cuando sentia que ya no podia siempre estuviste ahi<br>
+                            21.- Por si no sabias, este dia cumplo años hahaha<br>
+                            22.- Te amo con todo mi ser y mi alma, y te amare incluso despues de mi muerte<br>
+                            23.- Me haces sentir en cierta forma "especial"<br>
+                            24.- Ahora mi mundo eres tú<br>
+                            25.- Aún sigue pasando el tiempo y aún más te quiero<br>
+                            26.- Amo tu sonrisa y tu hermosa mirada<br>
+                            27.- Desearia que cada segunto junto a ti se convirtieran en años<br>
+                            28.- Me haces sentir que somos uno solo<br>
+                            29.- Eres mi todo<br>
+                            30.- Por ti no le temeria a nada<br>
+                            31.- Amaria pasar siempre este dia contigo para volver a iniciar con el dia 1 y demostrarte que te seguiria amando<br>
+                        </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal" id="modal3">
+        <div class="modal-content">
+            <button class="close-btn" onclick="closeModal(3)">&times;</button>
+            <p>Hola Shirley, espero de corazón te encuentres muy bien.<br>
+                Quise hacer algo lindo para tu cumpleaños pero actualmente no tengo lo necesario para regalarte algo hermoso, te debo tu regalo pero en cuanto pueda lo hare! <br>
+                no queria dejarte con las manos vacias asi que hice esta web para poder felicitarte por tu cumpleaños. Es un poco dificil para mi el expresarme, de ante mano te pido una disculpa por eso, tambien por los errores o cosas repetidas que llegue a tener, estare revisando y corrigiendo<br>
+                Lo hice con todo mi amor, espero te guste. FELICIDADES! ❤️‍🩹</p>
+        </div>
+    </div>
+
+<script>
+        function openModal(idx) {
+            document.getElementById('modal' + idx).style.display = 'flex';
+        }
+        function closeModal(idx) {
+            document.getElementById('modal' + idx).style.display = 'none';
+        }
+        document.querySelectorAll('.modal').forEach((modal, idx) => {
+            modal.addEventListener('click', function(e) {
+                if (e.target === modal) closeModal(idx);
+            });
+        });
+    </script>
+</body>
+</html>
